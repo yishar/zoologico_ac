@@ -1,6 +1,6 @@
 module.exports = {
     HOST: "localhost",
-    USER: "anthony",
+    USER: "root",
     PASSWORD: "123.anthony.123",
     DB: "zoologico_db",
     dialect: "mysql",

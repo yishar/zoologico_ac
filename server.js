@@ -22,13 +22,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Llamar a sysc()
-const db = require("./zoologico_ac/models");
+const db = require("../zoologico_ac/models");
 db.sequelize.sync();
 
 // Una Ruta simple para testear el API
 app.get("/", (req, res) => {
     res.json({ message: "Bienvenido a Zoológico AC." });
 });
+
+// Agregar las rutas para el servidor
+require("../zoologico_ac/routes/animal.routes.js")(app);
 
 // Configurar el puerto y y escuchar las solicitudes
 const PORT = process.env.PORT || 8080;

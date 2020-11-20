@@ -1,0 +1,14 @@
+version: '2'
+services:
+  anthony_db:
+    image: mysql:latest
+    volumes:
+      - "./.mysql-data/db:/var/lib/mysql"
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 123.anthony.123
+      MYSQL_DATABASE: zoologico_db
+      MYSQL_USER: anthony
+      MYSQL_PASSWORD: anthony.123

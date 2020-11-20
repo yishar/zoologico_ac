@@ -9,9 +9,9 @@ const Op = db.Sequelize.Op;
  */
 exports.create = (req, res) => {
     // Validar la solicitud
-    if (!req.body.title) {
+    if (!req.body.nombre) {
         res.status(400).send({
-            message: "El contenido no puede estar vacío."
+            message: "El campo nombre no puede estar vacío."
         });
         return;
     }
