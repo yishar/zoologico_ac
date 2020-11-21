@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# Ir hasta el directorio donde se encuentra este archivo y luego ejecutar el siguiente comando.
-# RUTA_A_DOCKER-COMPOSE.YML
-
-docker-compose up -d
