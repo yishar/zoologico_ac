@@ -26,7 +26,8 @@ exports.create = (req, res) => {
     // Guardando Animal en la base de datos
     Animal.create(animal)
         .then(data => {
-            res.send(data);
+            const stringify = JSON.stringify(data);
+            res.send(stringify);
         })
         .catch(err => {
             // Respuesta de error con status = 500
@@ -48,7 +49,8 @@ exports.findAll = (req, res) => {
 
     Animal.findAll({ where: condition })
         .then(data => {
-            res.send(data);
+            const stringify = JSON.stringify(data);
+            res.send(stringify);
         })
         .catch(err => {
             res.status(500).send({
@@ -68,7 +70,8 @@ exports.findOne = (req, res) => {
 
     Animal.findByPk(id)
         .then(data => {
-            res.send(data);
+            const stringify = JSON.stringify(data);
+            res.send(stringify);
         })
         .catch(err => {
             res.status(500).send({
