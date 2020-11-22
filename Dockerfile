@@ -1,21 +1,21 @@
 # Obtener la última version de nodejs
 FROM node:latest
-# Creo un directorio "src" en mi docker
-RUN mkdir /src
+# Crea y Moverse para el directorio creado anteriormente "zoologico_ac"
+WORKDIR /zoologico_ac
 # Installar nodemon de forma global
 RUN npm install nodemon -g
-# Moverse para el directorio creado anteriormente "src"
-WORKDIR /src
 # Agregar el archivo package.json desde mi proyecto para el directorio en el docker
-ADD package.json /src/package.json
+COPY package.json .
 # Installar los paquetes de forma interna
 RUN npm install
 # Agregar el archivo nodemon.json desde mi proyecto para el directorio en el docker
-ADD nodemon.json /src/nodemon.json
+COPY nodemon.json .
 # Bundle app source
-COPY . /src
+COPY . .
 # Exponer el puerto 8080 del docker
 EXPOSE 8080
+# Iniciar la aplicación cuando se inicia el contenedor
+CMD nodemon -L --watch . server.js
 # Por último correr el script
-CMD nodemon server.js
+# CMD node server.js
 # CMD node server.js

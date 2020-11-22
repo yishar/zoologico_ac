@@ -3,4 +3,5 @@
 # Creando la imagen y correr el contenedor
 # RUTA_A_DOCKER-COMPOSE.YML
 
+docker-compose build
 docker-compose up -d

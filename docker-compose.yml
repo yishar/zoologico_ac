@@ -1,5 +1,17 @@
 version: '2'
 services:
+  api:
+    build: .
+    volumes:
+      - ".:/zoologico_ac/"
+    ports:
+      # Convertir el puerto interno del
+      # docker "8080" en "80" para afuera.
+      - "80:8080"
+    depends_on:
+      - anthony_db
+    networks:
+      - net
   anthony_db:
     image: mysql:latest
     volumes:
@@ -7,8 +19,12 @@ services:
     restart: always
     ports:
       - 3306:3306
+    networks:
+      - net
     environment:
       MYSQL_ROOT_PASSWORD: 123.anthony.123
       MYSQL_DATABASE: zoologico_db
       MYSQL_USER: anthony
       MYSQL_PASSWORD: anthony.123
+networks:
+  net:

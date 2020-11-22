@@ -1,5 +1,5 @@
 module.exports = {
-    HOST: "localhost",
+    HOST: "zoologico_ac_anthony_db_1",
     USER: "root",
     PASSWORD: "123.anthony.123",
     DB: "zoologico_db",
