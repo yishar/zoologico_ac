@@ -10,7 +10,7 @@ COPY package.json .
 RUN npm install
 # Agregar el archivo nodemon.json desde mi proyecto para el directorio en el docker
 COPY nodemon.json .
-# Bundle app source
+# Copiar el resto de archivos de la aplicación
 COPY . .
 # Exponer el puerto 8080 del docker
 EXPOSE 8080

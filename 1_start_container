@@ -5,3 +5,6 @@
 
 docker-compose build
 docker-compose up -d
+
+# Iniciar el servidor
+docker exec -i zoologico_ac_api_1 node server.js
